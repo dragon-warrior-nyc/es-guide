@@ -52,12 +52,10 @@ POST /product/_delete_by_query
 ```
 
 ```
-POST /product/_delete_by_query
+GET /product/_doc/_search
 {
-  "query": {
-    "match": {
-      "category": "book"
+    "query": {
+        "match_all": {}
     }
-  }
 }
 ```
