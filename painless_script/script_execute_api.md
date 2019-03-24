@@ -1,6 +1,19 @@
 ```
 POST /_scripts/painless/_execute
 {
+  "script": {
+    "source": "params.count / params.total",
+    "params": {
+      "count": 100.0,
+      "total": 1000.0
+    }
+  }
+}
+```
+
+```
+POST /_scripts/painless/_execute
+{
   "script":{
     "source": """
       long u = params.q ^ params.b; 
