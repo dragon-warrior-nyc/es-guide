@@ -1998,4 +1998,3 @@
 {"purchased_at":"2016-09-04T09:37:28Z","lines":[{"product_id":5,"amount":25.63,"quantity":1},{"product_id":9,"amount":37.25,"quantity":2}],"total_amount":62.88,"salesman":{"id":62,"name":"Palm Godmer"},"sales_channel":"phone","status":"completed"}
 {"index":{"_id":1000}}
 {"purchased_at":"2016-10-03T15:57:59Z","lines":[{"product_id":9,"amount":12.15,"quantity":3},{"product_id":4,"amount":54.07,"quantity":1},{"product_id":10,"amount":83.01,"quantity":3}],"total_amount":149.23,"salesman":{"id":58,"name":"Leodora Mithon"},"sales_channel":"phone","status":"pending"}
-
