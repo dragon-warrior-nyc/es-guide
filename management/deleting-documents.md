@@ -9,6 +9,11 @@ DELETE /product/_doc/1
 ## Adding test documents
 
 ```
+DELETE /product
+PUT /product?pretty
+```
+
+```
 POST /product/_doc
 {
   "name": "Processing Events with Logstash",
@@ -24,7 +29,27 @@ POST /product/_doc
 }
 ```
 
+```
+GET /product/_doc/_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+```
+
 ## Deleting documents by query
+
+```
+POST /product/_delete_by_query
+{
+  "query": {
+    "match": {
+      "category": "book"
+    }
+  }
+}
+```
 
 ```
 POST /product/_delete_by_query
