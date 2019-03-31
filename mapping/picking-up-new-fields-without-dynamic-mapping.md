@@ -1,5 +1,7 @@
 # Picking up new fields without dynamic mapping
 
+For this one to make sense, you need to set `"dynamic": false` at the time you create the index mapping.
+
 ## Adding test document
 
 ```
