@@ -1,2 +1,2 @@
 # es-guide
-A guide to Elasticsearch
+A gentle guide to Elasticsearch
