@@ -1,4 +1,4 @@
-# Introducing the Query DSL
+# Introducing the Query Domain-Specific Language (DSL)
 
 ## Matching all documents
 
