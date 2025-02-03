@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.3  # Or your preferred version
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" # Adjust if needed
+      - "bootstrap.memory_lock=true"
+      - xpack.security.enabled=false  # Development only! Disable for production.
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.5.3  # Or your preferred version
+    container_name: kibana
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+
+  cerebro:
+    image: lmenezes/cerebro:0.9.4  # Or a compatible version; check compatibility!
+    container_name: cerebro
+    ports:
+      - 9000:9000
+    depends_on:
+      - elasticsearch
+    environment:
+      - CEREBRO_ES_HOSTS=http://elasticsearch:9200  # Correct connection string!
+
+volumes:
+  esdata:
+
+
